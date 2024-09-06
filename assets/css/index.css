@@ -1,0 +1,207 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition:  all .3s;
+    outline: none;
+    border: none;
+}
+:root{
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    height: 100vh;
+    font-family:"Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-color: var(--CharcoalGrey);
+    position: relative;
+}
+.forms{
+    background-color: var(--White);
+    padding:20px;
+    display: flex;
+    align-items: center;
+    height:600px;
+    width:55%;
+    border-radius:20px;
+    justify-content: space-between;
+    gap: 20px;
+
+    box-shadow: 10px 10px 50px #00000015;
+}
+.success{
+    border-radius:20px;
+    width:380px;
+    background-color: var(--White);
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: 10px 10px 50px #00000015;
+    transform: scale(0);
+    position: absolute;
+}
+.success.active{
+    transform: scale(1);
+}
+.success img{
+    margin-bottom:20px;
+}
+.success h1{
+    font-weight: bolder;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.success p{
+    line-height:1.4;
+    margin-bottom: 20px;
+}
+.form{
+    width:50%;
+    height: 90%;
+    padding:10px;
+    padding-left:30px;
+}
+.form h1{
+    margin-top:10px;
+    font-weight: bolder;
+    font-size: 45px;
+    margin-bottom: 20px;
+ 
+}
+.form p{
+    margin-bottom:40px;
+    max-width: 400px;
+}
+
+.form .info div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form .info div p{
+    margin-bottom: 0;
+}
+.form .info div p:last-child{
+    margin-bottom: 20px;
+}
+.form .info img{
+    margin-right: 20px;
+}
+.Entry{
+    margin-top: 20px;
+    width: 100%;
+ 
+}
+.Entry div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.error{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    color: var(--Tomato);
+    display: none;
+}
+.error.show{
+    display: block;
+}
+input.vaild::placeholder{
+    color: var(--Tomato);
+}
+.Entry div label{
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+.Entry div input{
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--Grey);
+    margin-bottom:10px;
+}
+.Entry div input.vaild{
+    background-color:hsla(4, 100%, 67%, 0.219);
+    border:1px solid var(--Tomato);
+}
+button{
+    width: 100%;
+    border-radius:5px;
+    padding: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: var(--DarkSlateGrey);
+    cursor: pointer;
+}
+button:hover{
+    background-color: var(--Tomato);
+    box-shadow: 3px 10px 10px  hsla(4, 100%, 67%, 0.276);
+}
+.image{
+    width:45%;
+    height: 100%;
+    background-color: var(--Tomato);
+    border-radius: 10px;
+    background-image: url(../images/illustration-sign-up-desktop.svg);
+    background-position:right;
+    background-repeat: no-repeat;
+}
+@media (max-width:767px) {
+    body{
+        display: block;
+    }
+    .forms{
+        flex-direction: column-reverse;
+        width: 100%;
+        height:100vh;
+        border-radius:0;
+        padding: 0;
+    }
+    .image{
+        background-size: cover;
+        margin-top:-10px;
+        border-radius:15px;
+        width:100%;
+        height:40%;
+        background-image: url(../images/illustration-sign-up-mobile.svg);
+    }
+    .form{
+        width: 100%;
+        padding: 20px;
+    }
+    .success{
+        width:100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .success button{
+        position: absolute;
+        bottom: 20px;
+        left:50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+}
+/* @media (min-width:990px) {
+    .forms{
+        width:80%;
+    }
+} */
+@media (max-width:1255px) and (min-width:768px) {
+    .forms{
+        width:90%;
+        height:95%;
+    }
+}
